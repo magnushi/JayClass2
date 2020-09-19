@@ -8,3 +8,7 @@
   width : 66%;
   margin : auto;
 }
+
+.blogTitle{
+  text-transform: capitalize;
+}

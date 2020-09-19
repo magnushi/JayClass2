@@ -14,7 +14,7 @@ function urlFor(source){
 
 function OnePost (){
     const [postData, setPostData ] = useState(null);
-    const {slug} = useParams();
+    const { slug } = useParams();
 
     useEffect(() => {
         Client.fetch(
@@ -37,9 +37,26 @@ function OnePost (){
         .catch(console.error);
     }, [slug])
 
+    if (!postData) return <div> loading one post forever... </div>
+
     return (
     <div className = 'widget'>
         <h2> {postData.title} </h2>
+        <div>
+            {postData.mainImage &&
+                <img src={urlFor(postData.mainImage)}/>
+            }
+        </div>
+        <div>
+            <h3> By {postData.name} on publishdate to be updated </h3>
+        </div>
+        <div>
+            <BlockContent
+                blocks = {postData.body}
+                projectId = {Client.clientConfig.projectId}
+                dataset = {Client.clientConfig.dataset}
+            />
+        </div>
     </div>
   )
 };

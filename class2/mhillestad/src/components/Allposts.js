@@ -8,17 +8,39 @@ import Books from '../Books.js';
 function Allposts (){
     const me = 'Magnus Hillestad'
 
+    const [allPostData, setAllPostData ] = useState(null);
+
+    useEffect(() => {
+        Client.fetch(
+            `
+            *[_type =='post']{
+                title,
+                "name": author->name,
+                slug,
+                }
+            `
+            )
+
+        .then((data) => setAllPostData(data))
+        .catch(console.error);
+    }, [])
+
     return (
     <div className = 'widget'>
         <h1> {me} Homepage </h1>
         <Bio />
         <h1> Here is my blog:</h1>
     
-        {/*
-        {posts.map(post => (
-            <h4> {post.toUpperCase()} </h4>
+
+        {allPostData && allPostData.map((post, index) => (
+            <div>
+            <p className = 'blogTitle'>
+            <Link to={"/" + post.slug.current} key={post.slug.current}>
+                {post.title}
+            </Link>
+            </p>
+            </div>
         ))}
-        */}
 
         <Books /> 
 

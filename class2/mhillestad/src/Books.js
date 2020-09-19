@@ -23,7 +23,7 @@ function Books (){
     const books = [book1, book2]
 
   return (
-    <div className = 'widget'>
+    <div>
     <h1> Things I enjoyed reading:</h1>
     
     {books.map(book => (
