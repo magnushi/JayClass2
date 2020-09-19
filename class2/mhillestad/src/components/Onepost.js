@@ -38,6 +38,7 @@ function OnePost (){
     }, [slug])
 
     if (!postData) return <div> loading one post forever... </div>
+    
 
     return (
     <div className = 'widget'>
