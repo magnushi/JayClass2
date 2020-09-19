@@ -1,19 +1,18 @@
 import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
-import Bio from './Bio.js';
-import Blog from './Blog.js';
-import Books from './Books.js';
+import Allposts from './components/Allposts.js';
+import OnePost from './components/Onepost.js';
 
 function App (){
-  const me = 'Magnus Hillestad'
 
   return (
+    <BrowserRouter>
+    <Route component = {Allposts} path = "/" exact />
+    <Route component = {OnePost} path = "/:slug"/>
     <div className = 'main'>
-      <h1> {me} Homepage </h1>
-      <Bio />
-      <Blog />
-      <Books /> 
     </div>
+    </BrowserRouter>
   )
 };
 
