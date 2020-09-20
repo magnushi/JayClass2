@@ -23,6 +23,7 @@ function OnePost (){
             `*[slug.current == $slug]{
             title,
             slug,
+            _createdAt,
             mainImage{
                 asset->{
                     _id,
@@ -47,11 +48,11 @@ function OnePost (){
         <h2> {postData.title} </h2>
         <div>
             {postData.mainImage &&
-                <img src={urlFor(postData.mainImage)}/>
+                <img src={urlFor(postData.mainImage).width(800)}/>
             }
         </div>
         <div>
-            <h3> By {postData.name} on publishdate to be updated </h3>
+            <h3> By {postData.name} on {postData._createdAt} </h3>
         </div>
         <div>
             <BlockContent
