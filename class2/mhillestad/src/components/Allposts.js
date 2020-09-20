@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import Client from '../client.js';
-import Bio from '../Bio.js';
-import Books from '../Books.js';
+import Bio from './Bio.js';
+import Books from './Books.js';
 
 
 function Allposts (){

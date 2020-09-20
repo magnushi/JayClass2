@@ -37,8 +37,8 @@ function OnePost (){
         .catch(console.error);
     }, [slug])
 
-    if (!postData) return <div> loading one post forever... </div>
-    
+    if (!postData) return <div> loading... </div>
+
 
     return (
     <div className = 'widget'>
