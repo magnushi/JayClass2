@@ -27,9 +27,9 @@ function Allposts (){
 
     return (
     <div className = 'widget'>
-        <h1> {me} Homepage </h1>
+        <h1> mhillestad.com </h1>
         <Bio />
-        <h1> Here is my blog:</h1>
+        <h3> Reflections:</h3>
     
 
         {allPostData && allPostData.map((post, index) => (

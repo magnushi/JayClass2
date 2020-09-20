@@ -24,7 +24,7 @@ function Books (){
 
   return (
     <div>
-    <h1> Things I enjoyed reading:</h1>
+    <h3> Things I enjoyed reading:</h3>
     
     {books.map(book => (
         book.bookHTML
