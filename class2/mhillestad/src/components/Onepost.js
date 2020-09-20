@@ -3,6 +3,8 @@ import {useParams} from 'react-router-dom';
 import Client from '../client.js';
 import BlockContent from '@sanity/block-content-to-react';
 import imageUrlBuilder from '@sanity/image-url';
+import {Link} from 'react-router-dom';
+
 
 const builder = imageUrlBuilder(Client)
 
@@ -57,6 +59,9 @@ function OnePost (){
                 projectId = {Client.clientConfig.projectId}
                 dataset = {Client.clientConfig.dataset}
             />
+        </div>
+        <div>
+            <a href="/">...back</a>
         </div>
     </div>
   )
